@@ -7,8 +7,8 @@ public class SyntaxOfArrayList{
     public static void main(String[] args) {
         // ClassName onjectName = new ClassName();
         ArrayList<Integer> list = new ArrayList<>();
-        ArrayList<String> list2 = new ArrayList<>();
-        ArrayList<Boolean> list3 = new ArrayList<>();
+        // ArrayList<String> list2 = new ArrayList<>();
+        // ArrayList<Boolean> list3 = new ArrayList<>();
         
 
     // operations on ArrayList 
