@@ -1,7 +1,8 @@
+package ArrayList;
 import java.util.ArrayList;
 
-public class ReverseArrayList {
 
+public class SizeOfArrayList {
     public static void main(String[] args) {
         
         ArrayList<Integer> list = new ArrayList<>();
@@ -12,10 +13,14 @@ public class ReverseArrayList {
         list.add(4);
         list.add(5);
 
-        for(int i= list.size() -1; i>=0;i--){
-            System.out.print(list.get(i) + " "); // time complexity O(n)
+        System.out.println(list.size());
+
+        // print the arraylist 
+        for(int i =0; i<list.size();i++){
+            System.out.print(list.get(i) + " ");
         }
         System.out.println();
+        
     }
-    
+
 }
