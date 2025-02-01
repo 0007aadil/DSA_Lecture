@@ -1,6 +1,4 @@
-public class recursiveSearch {
-
-
+public class ReverseLinkedList {
     public static class Node {
 
         int data;
@@ -153,57 +151,32 @@ public class recursiveSearch {
     }
 
 
-    // Method for iterative search 
+    //  --- Methods to reverse a Linked List ---
 
-    public int iterativeSrch(int key){   // time complexity is O(n) 
-        Node temp = head;
-        int i =0;
+    public void reversell(){
+        Node prev = null;
+        Node curr = tail= head;
+        Node next;
 
-         while (temp != null) {
-            if (temp.data == key ) { // key found 
-                return i;
-                
-            }
-            temp = temp.next;
-            i++;
-         }
-
-         // key not found 
-         return -1;
-    }
-
-    // methods for recursive search 
-
-    public int helper(Node head , int key){  // time complixity O(n) 
-        if (head == null) {
-            return -1;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr =next;
         }
 
-        if (head.data == key) {
-            return 0 ;
-        }
-
-        int idx = helper(head.next, key);
-        if (idx == -1 ) {
-            return -1;
-
-        }
-
-        return idx+1;
+        head = prev;
     }
 
-    public int recursiveSrc(int key) {
-        return helper(head, key);
-    }
+
+
+
 
 
 
 
     public static void main(String[] args) {
-
-
-        recursiveSearch ll = new recursiveSearch();
-
+        ReverseLinkedList ll = new ReverseLinkedList();
 
         ll.addFirst(2);
         
@@ -219,11 +192,13 @@ public class recursiveSearch {
 
         System.out.println(ll.size);
 
-        System.out.println(ll.recursiveSrc(3));
-        System.out.println(ll.recursiveSrc(10));
+        ll.reversell();
+
+        ll.print();
+
+
+
+
         
     }
-
-
-    
 }
