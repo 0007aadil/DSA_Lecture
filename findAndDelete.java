@@ -102,7 +102,7 @@ public class findAndDelete {
         }
 
 
-        //  --- Methods to find and delete Nth from the End ---
+        //  ---- Methods to find and delete Nth from the End ----
 
         public void deleteNthFromEnd(int n ){
             // calculate size of LL
