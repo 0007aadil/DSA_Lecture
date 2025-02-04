@@ -1,4 +1,5 @@
-public class syntax {
+package LinkedList;
+public class addNodeInMiddle {
 
     public static class Node {
 
@@ -70,25 +71,56 @@ public class syntax {
     }
 
 
-    public static void main(String[] args) {
+    // Method to add in middle 
 
-        syntax ll = new syntax();  // creating Object of the Syntex 
 
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addLast(3);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
+    public void add(int idx, int data ){
 
-        
+        if (idx ==0) {
+            addFirst(data);
+            return;
+        }
 
-        
 
-        
+        Node newNode = new Node(data);
+
+        Node temp = head;
+        int i=0;
+
+        while (i < idx-1) {
+            temp = temp.next;
+            i++;
+        }
+
+        // i = idx -1 ; temp -> prev
+        newNode.next = temp.next;
+        temp.next = newNode;
+
     }
 
+
+
+    public static void main(String[] args) {
+
+        addNodeInMiddle ll = new addNodeInMiddle();
+
+        
+        
+        ll.addFirst(2);
+        
+        ll.addFirst(1);
+        
+        ll.addLast(3);
+        
+        ll.addLast(4);
+        
+        ll.add(2, 9);
+        
+        ll.print();
+        
+
+
+        
+
+    }
 }

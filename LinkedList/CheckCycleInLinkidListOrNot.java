@@ -1,3 +1,4 @@
+package LinkedList;
 public class CheckCycleInLinkidListOrNot {
 
     public static class Node {

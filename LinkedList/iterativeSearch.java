@@ -1,4 +1,6 @@
-public class removeLinkedList {
+package LinkedList;
+public class iterativeSearch {
+
 
 
     public static class Node {
@@ -152,8 +154,34 @@ public class removeLinkedList {
 
     }
 
+
+    // Method for iterative search 
+
+    public int iterativeSrch(int key){   // time complexity is O(n) 
+        Node temp = head;
+        int i =0;
+
+         while (temp != null) {
+            if (temp.data == key ) { // key found 
+                return i;
+                
+            }
+            temp = temp.next;
+            i++;
+         }
+
+         // key not found 
+         return -1;
+    }
+
+
+
+
+
+
     public static void main(String[] args) {
-        removeLinkedList ll = new removeLinkedList();
+
+        iterativeSearch ll = new iterativeSearch();
 
         ll.addFirst(2);
         
@@ -169,15 +197,10 @@ public class removeLinkedList {
 
         System.out.println(ll.size);
 
-        ll.removeFirst();
-        ll.print();
-        System.out.println(ll.size);
-
-        ll.removeLast();
-        ll.print();
-        System.out.println(ll.size);
+        System.out.println(ll.iterativeSrch(3));
+        System.out.println(ll.iterativeSrch(10));
 
 
+        
     }
-    
 }

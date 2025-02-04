@@ -1,3 +1,4 @@
+package LinkedList;
 import java.lang.classfile.components.ClassPrinter.Node;
 
 public class palindromeOrNot {

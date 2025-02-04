@@ -1,5 +1,5 @@
-public class iterativeSearch {
-
+package LinkedList;
+public class recursiveSearch {
 
 
     public static class Node {
@@ -173,14 +173,38 @@ public class iterativeSearch {
          return -1;
     }
 
+    // methods for recursive search 
 
+    public int helper(Node head , int key){  // time complixity O(n) 
+        if (head == null) {
+            return -1;
+        }
+
+        if (head.data == key) {
+            return 0 ;
+        }
+
+        int idx = helper(head.next, key);
+        if (idx == -1 ) {
+            return -1;
+
+        }
+
+        return idx+1;
+    }
+
+    public int recursiveSrc(int key) {
+        return helper(head, key);
+    }
 
 
 
 
     public static void main(String[] args) {
 
-        iterativeSearch ll = new iterativeSearch();
+
+        recursiveSearch ll = new recursiveSearch();
+
 
         ll.addFirst(2);
         
@@ -196,10 +220,11 @@ public class iterativeSearch {
 
         System.out.println(ll.size);
 
-        System.out.println(ll.iterativeSrch(3));
-        System.out.println(ll.iterativeSrch(10));
-
-
+        System.out.println(ll.recursiveSrc(3));
+        System.out.println(ll.recursiveSrc(10));
         
     }
+
+
+    
 }

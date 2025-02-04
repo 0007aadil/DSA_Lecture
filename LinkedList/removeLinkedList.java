@@ -1,4 +1,5 @@
-public class recursiveSearch {
+package LinkedList;
+public class removeLinkedList {
 
 
     public static class Node {
@@ -152,58 +153,8 @@ public class recursiveSearch {
 
     }
 
-
-    // Method for iterative search 
-
-    public int iterativeSrch(int key){   // time complexity is O(n) 
-        Node temp = head;
-        int i =0;
-
-         while (temp != null) {
-            if (temp.data == key ) { // key found 
-                return i;
-                
-            }
-            temp = temp.next;
-            i++;
-         }
-
-         // key not found 
-         return -1;
-    }
-
-    // methods for recursive search 
-
-    public int helper(Node head , int key){  // time complixity O(n) 
-        if (head == null) {
-            return -1;
-        }
-
-        if (head.data == key) {
-            return 0 ;
-        }
-
-        int idx = helper(head.next, key);
-        if (idx == -1 ) {
-            return -1;
-
-        }
-
-        return idx+1;
-    }
-
-    public int recursiveSrc(int key) {
-        return helper(head, key);
-    }
-
-
-
-
     public static void main(String[] args) {
-
-
-        recursiveSearch ll = new recursiveSearch();
-
+        removeLinkedList ll = new removeLinkedList();
 
         ll.addFirst(2);
         
@@ -219,11 +170,15 @@ public class recursiveSearch {
 
         System.out.println(ll.size);
 
-        System.out.println(ll.recursiveSrc(3));
-        System.out.println(ll.recursiveSrc(10));
-        
+        ll.removeFirst();
+        ll.print();
+        System.out.println(ll.size);
+
+        ll.removeLast();
+        ll.print();
+        System.out.println(ll.size);
+
+
     }
-
-
     
 }
