@@ -28,7 +28,7 @@ public class reverseStringUsingStack {
     
 
     public static void main(String[] args) {
-        String str = "LoveYappa";
+        String str = "MyNameIsKhan";
         System.out.println(reverseString(str) );
     }
 }
