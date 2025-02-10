@@ -1,70 +1,80 @@
 package LinkedList;
 public class Question_1 {
 
-    public static class Node {
+     static class Node {
         int data;
         Node next;
 
-        public Node(int data) {
+         Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    private Node head;
-    private Node tail;
+    
 
-    // Add method
-    public void add(int data) {
-        Node newNode = new Node(data);
+    // Method to get  intertion node 
 
-        if (head == null) {
-            head = tail = newNode;
-            return;
+    public Node getIntertionNode(Node head1, Node head2){
+        while (head2 != null) {
+            Node temp =  head1;
+            while (temp != null) {
+                if (temp == head2) {
+                    return head2;
+                }
+                temp = temp.next;
+            }
+            head2 = head2.next;
         }
-
-        newNode.next = head;
-        head = newNode;
+        return null;
     }
+    
 
-    // Print method
-    public void print() {
-        if (head == null) {
-            System.out.println("LL is empty!!");
-            return;
-        }
-
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + "->");
-            temp = temp.next;
-        }
-        System.out.println("null");
-    }
+   
 
     public static void main(String[] args) {
-        Question_1 list_1 = new Question_1();
-        list_1.add(7);
-        list_1.add(6);
-        list_1.add(5);
-        list_1.add(4);
-        list_1.add(3);
-        list_1.add(2);
-        list_1.add(1);
-
-        Question_1 list_2 = new Question_1();
-        list_2.add(7);
-        list_2.add(6);
-        list_2.add(5);
-        list_2.add(4);
-
-       
+        Question_1 list = new Question_1();
 
 
-        // Print both linked lists
-        System.out.println("List 1: ");
-        list_1.print();
-        System.out.println("List 2: ");
-        list_2.print();
-    }
+
+
+
+        Node head1,head2;
+        head1 = new Node(10);
+        head2=new Node(3);
+        
+
+        Node newNode = new Node(6);
+        head2.next = newNode;
+
+        newNode = new Node(9);
+        head2.next.next = newNode;
+
+        newNode = new Node(15);
+        head1.next= newNode;
+        head2.next.next.next = newNode;
+
+        newNode = new Node(30);
+        head1.next.next = newNode;
+
+        head1.next.next.next = null;
+
+        Node intersectionPoint = list.getIntertionNode(head1, head2);
+
+
+        if (intersectionPoint == null) {
+            System.out.println(" NO Intersection \n ");
+
+            
+        }else {
+            System.out.println("Intersection Point : " + intersectionPoint.data);
+        }
+
+
+}
+        
+
+
+
+        
 }
