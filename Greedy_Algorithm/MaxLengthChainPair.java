@@ -5,7 +5,7 @@ public class MaxLengthChainPair {
     
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {  //O(nlogn) tims complexity 
         
         int pairs[][] = {{5,8},{39,60}, {5,28} , {27,40} ,{50,90}};
         Arrays.sort(pairs, Comparator.comparingDouble(o -> o[1]));
