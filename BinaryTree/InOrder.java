@@ -35,6 +35,8 @@ public class InOrder {
 
         }
 
+        //InOrder traversal
+
         public static void InOdr(Node root){
             if (root == null) {
                 return;
