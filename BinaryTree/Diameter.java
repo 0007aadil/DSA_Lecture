@@ -28,7 +28,7 @@ public class Diameter {
         return Math.max(lh, rh) +1;
     }
 
-
+    // Approach 1
     public static int diameter(Node root){
         if (root == null) {
             return 0;
@@ -41,7 +41,7 @@ public class Diameter {
 
         int selfDiam = leftHt + rightHt + 1;
 
-        return Math.max(selfDiam, Math.max(rightDiam, selfDiam));
+        return Math.max(selfDiam, Math.max(rightDiam, leftDiam));
     }
 
 
