@@ -1,8 +1,7 @@
 package BinarySearchTree;
 
-public class DeleteInBST {
+public class PrintInRange {
     
-
 
     static class Node {
     
@@ -83,6 +82,25 @@ public class DeleteInBST {
         return root;
     }
 
+
+    public static void range(Node root , int k1 , int k2){
+
+        if (root == null) {
+            return;
+        }
+        if (root.data >= k1 && root.data <= k2) {
+            range(root.left, k1, k2);
+            System.out.print(root.data+ " ");
+            range(root.right, k1, k2);
+        }
+        else if (root.data < k1) {
+            range(root.left, k1, k2);
+        }
+        else{
+            range(root.right, k1, k2);
+        }
+    }
+
     public static void main(String[] args) {
         int values[] = {8,5,3,1,4,6,10,11,14};
         Node root = null;
@@ -94,12 +112,9 @@ public class DeleteInBST {
         }
 
         inOrder(root);
-        System.out.println();
+        System.out.println(" -----> ");
 
-        delete(root, 11);
-        System.out.println();
-
-        inOrder(root);
+        range(root, 5, 12);
 
 
         
