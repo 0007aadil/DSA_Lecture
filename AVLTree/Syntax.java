@@ -133,6 +133,8 @@ public class Syntax {
                          20     40
                         /  \      \  
                        10   25     50  
+
+                       ---->      <-----
          */
 
         preOrder(root);
