@@ -3,7 +3,7 @@ package Heaps;
 
 import java.util.PriorityQueue;
 
-public class syntax {
+public class PriorityQueueSyntax {
     
 
     public static void main(String[] args) {
@@ -20,8 +20,9 @@ public class syntax {
 
 
         while (!pq.isEmpty()) {
-            System.out.print(pq.peek() + "-->");   // O(1)
+            System.out.print("--> " + pq.peek() );   // O(1)
             pq.remove();   //O(logn)
+            System.out.println();
         }
     }
 }
