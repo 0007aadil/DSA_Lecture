@@ -18,6 +18,12 @@ public class syntax {
         hm.put("US", 50);
         hm.put("SriLanka", 112);
 
-        System.out.println(hm);
+
+        int Population = hm.get("India");
+        
+
+        System.out.println( Population);
+
+
     }
 }
