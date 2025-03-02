@@ -1,0 +1,30 @@
+package Hashing;
+
+import java.util.HashMap;
+import java.util.Set;
+
+public class IterationInHashMap {
+    
+
+    public static void main(String[] args) {
+        HashMap<String, Integer> hm = new HashMap<>();
+        hm.put("India", 100);
+        hm.put("China", 10);
+        hm.put("Japan", 20);
+        hm.put("USA", 90);
+        hm.put("Africa", 182);
+        hm.put("SriLanka", 12);
+        hm.put("India", 98);
+        hm.put("North Korea", 72);
+
+
+        //Iterate
+        Set<String> keys = hm.keySet();
+        System.out.println(keys);
+
+        for (String k : keys) {
+            System.out.println("Key = " + k+ " , value = "+ hm.get(k));
+        }
+
+    }
+}
