@@ -30,7 +30,7 @@ public class insertInTrie {
 
             curr = curr.children[idx];
         }
-
+        
         curr.EndOfWord =true;
     }
     
