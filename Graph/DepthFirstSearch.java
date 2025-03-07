@@ -1,13 +1,12 @@
 package Graph;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
-public class BreadthFirstSearch {
-   
+public class DepthFirstSearch {
+    
 
-    static class  Edge {
+
+     static class  Edge {
     
         int src;
         int dest;
@@ -50,24 +49,22 @@ public class BreadthFirstSearch {
 
     }
 
-    public static void bfs(ArrayList<Edge>[] graph  ){// O(V + E)
-        Queue<Integer> q = new LinkedList<>();
-        boolean vis[] = new boolean[graph.length];
-        q.add(0); // source = 0
+    public static void dfs(ArrayList<Edge>[] graph , int curr , boolean vis[]){
 
-        while (!q.isEmpty()) {
-            int curr = q.remove();
+        //visit 
+        System.out.print(curr + " ");
+        vis[curr] =  true;
 
-            if (!vis[curr]) { // visit curr
-                System.out.print(curr + " ");
-                vis[curr] = true;
-                for(int i=0; i< graph[curr].size() ; i++){
-                    Edge e = graph[curr].get(i);
-                    q.add(e.dest);
-                }
+        for(int i=0 ; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if (!vis[e.dest]) {
+                dfs(graph, e.dest, vis);
             }
         }
+
+
     }
+
 
     public static void main(String[] args) {
         
@@ -76,10 +73,7 @@ public class BreadthFirstSearch {
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
-        bfs(graph);
+        dfs(graph , 0 , new boolean[V]);
 
     }
-
-
-
 }
