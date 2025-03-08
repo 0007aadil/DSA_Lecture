@@ -44,6 +44,7 @@ public class BipartiteGraph {
     }
     
 
+    // UnDirected Graph --> Using BFS 
     public static boolean isBipartite(ArrayList<Edge>[] graph){
         int col[] = new int[graph.length];
         for(int i=0; i<col.length; i++){
