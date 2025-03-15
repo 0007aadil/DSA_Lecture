@@ -1,4 +1,4 @@
-import syntaxUsingArrayList.stack;
+
 
 public class zeroOneKnapsack {
 
