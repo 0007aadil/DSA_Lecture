@@ -1,4 +1,4 @@
-
+import syntaxUsingArrayList.stack;
 
 public class zeroOneKnapsack {
 
@@ -50,6 +50,18 @@ public class zeroOneKnapsack {
     //     }
     // }
 
+
+    public static void print(int dp[][]){
+
+        for(int i =0 ; i<dp.length ; i++){
+            for(int j=0; j<dp[0].length; j++){
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
     
 
 
@@ -88,6 +100,7 @@ public class zeroOneKnapsack {
                 }
             }
         }
+        print(dp);
         return dp[n][w];
     }
 
