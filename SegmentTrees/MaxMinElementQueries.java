@@ -43,6 +43,27 @@ public class MaxMinElementQueries {
         }
     }
 
+    public static void update(int arr[] , int idx , int newVal){
+        arr[idx] = newVal;
+        int n = arr.length;
+        updateUtil(0, 0, n-1, idx, newVal);
+
+    }
+
+    public static void updateUtil(int i , int si , int sj , int idx , int newVal){
+        if (idx < si || idx > sj) {
+            return;
+        }
+
+        tree[i] = Math.max(tree[i], newVal);
+        if (si != sj) {
+            int mid = (si +sj)/2;
+            updateUtil(2*i+1, si, mid , idx, newVal);// left
+            updateUtil(2*i+2, mid+1, sj, idx, newVal);//right
+            
+        } 
+    }
+
     public static void main(String[] args) {
         int arr[] = {6,8,-1,2,17,1,3,2,4};
         int n = arr.length;
@@ -55,6 +76,10 @@ public class MaxMinElementQueries {
         // }
 
         int max = getmax(arr, 2, 5);
+        System.out.println(max);
+
+        update(arr, 2, 20);
+         max = getmax(arr, 2, 5);
         System.out.println(max);
 
     }
